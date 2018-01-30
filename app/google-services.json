@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "180671787160",
+    "firebase_url": "https://appauth-8a0d3.firebaseio.com",
+    "project_id": "appauth-8a0d3",
+    "storage_bucket": "appauth-8a0d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180671787160:android:9c0a475753f0e88d",
+        "android_client_info": {
+          "package_name": "amigo.atom.team.amigo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180671787160-u0s12gog0kbcipqeoaekap74401m3him.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHS_08L7VsuhMgvAQTdmX0XSt7ExAv8rU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
