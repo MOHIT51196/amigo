@@ -61,9 +61,9 @@ public final class MessagesFixtures extends FixturesData {
 
     private static User getUser() {
         return new User(
-                 "1",
-                 names.get(1),
-                 avatars.get(1),
+                 "0",
+                 names.get(0),
+                 avatars.get(0),
                 true);
     }
 }

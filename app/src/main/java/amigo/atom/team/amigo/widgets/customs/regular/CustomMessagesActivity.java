@@ -17,6 +17,10 @@ import com.stfalcon.chatkit.messages.MessageInput;
 import com.stfalcon.chatkit.messages.MessagesList;
 import com.stfalcon.chatkit.messages.MessagesListAdapter;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
 import java.util.ArrayList;
 
 import amigo.atom.team.amigo.R;
@@ -40,6 +44,12 @@ public class CustomMessagesActivity extends MessagesActivity
 
     private DatabaseReference dbRef;
     private StorageReference storageRef;
+    private Socket socket;
+    DataInputStream inputStream;
+    MessageInput input;
+
+
+    DataOutputStream outputStream;
 
 
     public static void open(Context context) {
@@ -62,13 +72,30 @@ public class CustomMessagesActivity extends MessagesActivity
         MessageInput input = (MessageInput) findViewById(R.id.input);
         input.setInputListener(this);
         input.setAttachmentsListener(this);
+		
+		Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    String message = inputStream.readUTF();
+                    ArrayList<Message> msgs = new ArrayList<Message>();
+                    Message msg = MessagesFixtures.getTextMessage(message);
+                    msgs.add(msg);
+                    messagesAdapter.addToEnd(msgs, false);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
     }
 
     @Override
     public boolean onSubmit(CharSequence input) {
-        Message msg = MessagesFixtures.getTextMessage(input.toString());
+       Message msg = MessagesFixtures.getTextMessage(input.toString());
         messagesAdapter.addToStart(msg
                 , true);
+        new MessageSenderTask().execute();
 
 //        dbRef.child("chat").child(msg.getId()).setValue(msg);
         return true;
@@ -104,46 +131,86 @@ public class CustomMessagesActivity extends MessagesActivity
 //        super.messagesAdapter.setLoadMoreListener(this);
         messagesList.setAdapter(super.messagesAdapter);
 
-        new MessageLoaderTask().execute();
+    }
+	
+	 void initServer() throws IOException {
+        socket = new Socket("192.168.138.65",8000 );
+        inputStream = new DataInputStream(socket.getInputStream());
+        outputStream = new DataOutputStream(socket.getOutputStream());
+
     }
 
-    private class MessageLoaderTask extends AsyncTask<Void, Void, Void>{
-
+	
+	private class MessageSenderTask extends AsyncTask<Void, Void, Void>{
 
         @Override
         protected void onPreExecute() {
+
 
         }
 
         @Override
         protected Void doInBackground(Void... params) {
-            dbRef.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(DataSnapshot dataSnapshot) {
-                    int flag = 0;
 
-                    for(DataSnapshot snapshot: dataSnapshot.getChildren()){
-                        messagesAdapter.clear();
+                String message = input.toString().trim();
 
-                        if(flag == 0){
-                            messagesAdapter.addToStart(snapshot.getValue(Message.class), true);
-                            flag++;
-                        }
+            try {
 
-                        for(int i=0; i<10; i++) {
-                            ArrayList<Message> messages = new ArrayList<>();
-                            Message msg = snapshot.getValue(Message.class);
-                            messages.add(msg);
-                            messagesAdapter.addToEnd(messages, false);
-                            messagesAdapter.notifyDataSetChanged();
-                        }
-                    }
+              //  messagesAdapter.clear();
+                ArrayList<Message> msgs = new ArrayList<>();
+                msgs.add(MessagesFixtures.getTextMessage(message));
+                messagesAdapter.addToEnd(msgs, false);
+                outputStream.writeUTF(message);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
-                }
 
-                @Override
-                public void onCancelled(DatabaseError databaseError) {}
-            });
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        try {
+            socket.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        new TaskInit().execute();
+    }
+
+    private class TaskInit extends AsyncTask<Void, Void, Void>{
+
+        @Override
+        protected void onPreExecute() {
+
+
+        }
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+           // String message = input.toString().trim();
+
+            try {
+                initServer();
+                //messagesAdapter.clear();
+               // outputStream.writeUTF(message);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
 
             return null;
         }

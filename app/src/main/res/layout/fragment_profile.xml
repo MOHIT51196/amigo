@@ -72,10 +72,10 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="I have been providing best services in the market since 2004."
+                                android:text="Freelance Android Developer | UI/UX Designer | Tech Enthusiast"
                                 android:textColor="@android:color/black"
                                 android:textSize="17dp"
-                                android:layout_margin="4dp"
+                                android:layout_margin="6dp"
                                 android:textAlignment="center"
                                 />
 
@@ -130,7 +130,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="30"
+                            android:text="21"
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:textSize="22dp"
@@ -140,7 +140,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
-                            android:text="Number of projects done."
+                            android:text="Current age"
                             android:textSize="14dp"
                             android:textColor="#4d4b4b"
                             android:layout_marginBottom="6dp"/>
@@ -173,7 +173,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
-                            android:text="Number of clients served."
+                            android:text="Number of therapist consulted"
                             android:textSize="14dp"
                             android:textColor="#4d4b4b"
                             android:layout_marginBottom="6dp"/>
@@ -196,7 +196,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_horizontal"
-                            android:text="30"
+                            android:text="175"
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:textSize="22dp"
@@ -206,7 +206,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
-                            android:text="Total support staff members"
+                            android:text="Credit counts so far"
                             android:textSize="14dp"
                             android:textColor="#4d4b4b"
                             android:layout_marginBottom="6dp"/>
@@ -261,13 +261,13 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Computer repair charges"
+                            android:text="Mobile Consultation charges"
                             android:layout_centerVertical="true"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="$ 30"
+                            android:text="$ 10"
                             android:textStyle="bold"
                             android:textColor="@color/colorAccent"
                             android:textSize="22dp"
@@ -294,7 +294,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Mobile repair charges"
+                            android:text="Complete therapy charges"
                             android:layout_centerVertical="true"/>
 
                         <TextView
@@ -318,32 +318,6 @@
                         android:background="@color/colorFade"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="20dp" />
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="10dp">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Peripheral repair charges"
-                            android:layout_centerVertical="true"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="$ 12"
-                            android:textStyle="bold"
-                            android:textColor="@color/colorAccent"
-                            android:textSize="22dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            />
-
-                    </RelativeLayout>
 
                 </LinearLayout>
 
