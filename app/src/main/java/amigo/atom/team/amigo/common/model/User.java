@@ -2,15 +2,21 @@ package amigo.atom.team.amigo.common.model;
 
 import com.stfalcon.chatkit.commons.models.IUser;
 
+import java.io.Closeable;
+import java.io.IOException;
+import java.io.Serializable;
+
 /*
  * Created by troy379 on 04.04.17.
  */
-public class User implements IUser {
+public class User implements IUser, Serializable, Cloneable {
 
     private String id;
     private String name;
     private String avatar;
     private boolean online;
+
+    public User(){}
 
     public User(String id, String name, String avatar, boolean online) {
         this.id = id;

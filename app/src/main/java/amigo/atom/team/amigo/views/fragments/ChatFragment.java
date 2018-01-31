@@ -32,7 +32,7 @@ public class ChatFragment extends Fragment {
         btnGoChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().startActivity(new Intent(getActivity(), CustomDialogsActivity.class));
+                getActivity().startActivity(new Intent(getActivity(), CustomMessagesActivity.class));
             }
         });
         return this.view;

@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 import com.stfalcon.chatkit.commons.ImageLoader;
 import com.stfalcon.chatkit.messages.MessagesListAdapter;
@@ -27,7 +28,7 @@ import amigo.atom.team.amigo.utils.AppUtils;
 /*
  * Created by troy379 on 04.04.17.
  */
-public abstract class DemoMessagesActivity extends AppCompatActivity
+public abstract class MessagesActivity extends AppCompatActivity
         implements MessagesListAdapter.SelectionListener,
         MessagesListAdapter.OnLoadMoreListener {
 
@@ -48,7 +49,9 @@ public abstract class DemoMessagesActivity extends AppCompatActivity
         imageLoader = new ImageLoader() {
             @Override
             public void loadImage(ImageView imageView, String url) {
-                Picasso.with(DemoMessagesActivity.this).load(url).into(imageView);
+                Glide.with(MessagesActivity.this).load("https://vignette.wikia.nocookie.net/creation/images/1/17/Bot.png/revision/latest?cb=20160707002420")
+                        .fitCenter()
+                        .into(imageView);
             }
         };
     }
@@ -56,7 +59,6 @@ public abstract class DemoMessagesActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
-        messagesAdapter.addToStart(MessagesFixtures.getTextMessage(), true);
     }
 
     @Override
@@ -92,9 +94,9 @@ public abstract class DemoMessagesActivity extends AppCompatActivity
 
     @Override
     public void onLoadMore(int page, int totalItemsCount) {
-        if (totalItemsCount < TOTAL_MESSAGES_COUNT) {
-            loadMessages();
-        }
+//        if (totalItemsCount < TOTAL_MESSAGES_COUNT) {
+//            loadMessages();
+//        }
     }
 
     @Override
@@ -104,16 +106,16 @@ public abstract class DemoMessagesActivity extends AppCompatActivity
         menu.findItem(R.id.action_copy).setVisible(count > 0);
     }
 
-    protected void loadMessages() {
-        new Handler().postDelayed(new Runnable() { //imitation of internet connection
-            @Override
-            public void run() {
-                ArrayList<Message> messages = MessagesFixtures.getMessages(lastLoadedDate);
-                lastLoadedDate = messages.get(messages.size() - 1).getCreatedAt();
-                messagesAdapter.addToEnd(messages, false);
-            }
-        }, 1000);
-    }
+//    protected void loadMessages() {
+//        new Handler().postDelayed(new Runnable() { //imitation of internet connection
+//            @Override
+//            public void run() {
+//                ArrayList<Message> messages = MessagesFixtures.getMessages(lastLoadedDate);
+//                lastLoadedDate = messages.get(messages.size() - 1).getCreatedAt();
+//                messagesAdapter.addToEnd(messages, false);
+//            }
+//        }, 1000);
+//    }
 
     private MessagesListAdapter.Formatter<Message> getMessageStringFormatter() {
         return new MessagesListAdapter.Formatter<Message>() {

@@ -10,11 +10,11 @@ import com.stfalcon.chatkit.dialogs.DialogsListAdapter;
 import amigo.atom.team.amigo.R;
 import amigo.atom.team.amigo.common.fixtures.DialogsFixtures;
 import amigo.atom.team.amigo.common.model.Dialog;
-import amigo.atom.team.amigo.common.demo.DemoDialogsActivity;
+import amigo.atom.team.amigo.common.demo.DialogsActivity;
 import amigo.atom.team.amigo.widgets.customs.regular.holders.dialogs.CustomDialogViewHolder;
 
 
-public class CustomDialogsActivity extends DemoDialogsActivity {
+public class CustomDialogsActivity extends DialogsActivity {
 
     public static void open(Context context) {
         context.startActivity(new Intent(context, CustomDialogsActivity.class));

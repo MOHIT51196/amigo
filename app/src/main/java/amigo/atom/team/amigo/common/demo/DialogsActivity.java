@@ -16,7 +16,7 @@ import amigo.atom.team.amigo.utils.AppUtils;
 /*
  * Created by troy379 on 05.04.17.
  */
-public abstract class DemoDialogsActivity extends AppCompatActivity
+public abstract class DialogsActivity extends AppCompatActivity
         implements DialogsListAdapter.OnDialogClickListener<Dialog>,
         DialogsListAdapter.OnDialogLongClickListener<Dialog> {
 
@@ -30,7 +30,7 @@ public abstract class DemoDialogsActivity extends AppCompatActivity
         imageLoader = new ImageLoader() {
             @Override
             public void loadImage(ImageView imageView, String url) {
-                Picasso.with(DemoDialogsActivity.this).load(url).into(imageView);
+                Picasso.with(DialogsActivity.this).load(url).into(imageView);
             }
         };
     }

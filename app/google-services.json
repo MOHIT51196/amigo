@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "180671787160",
-    "firebase_url": "https://appauth-8a0d3.firebaseio.com",
-    "project_id": "appauth-8a0d3",
-    "storage_bucket": "appauth-8a0d3.appspot.com"
+    "project_number": "735696360735",
+    "firebase_url": "https://amigo-f0270.firebaseio.com",
+    "project_id": "amigo-f0270",
+    "storage_bucket": "amigo-f0270.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:180671787160:android:9c0a475753f0e88d",
+        "mobilesdk_app_id": "1:735696360735:android:9c0a475753f0e88d",
         "android_client_info": {
           "package_name": "amigo.atom.team.amigo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "180671787160-u0s12gog0kbcipqeoaekap74401m3him.apps.googleusercontent.com",
+          "client_id": "735696360735-hjg6m65n98eu2cl3nquq92es4raml185.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAHS_08L7VsuhMgvAQTdmX0XSt7ExAv8rU"
+          "current_key": "AIzaSyBCqBTUdjDGgYenmLCE7UmIsptWNQQ8ndQ"
         }
       ],
       "services": {

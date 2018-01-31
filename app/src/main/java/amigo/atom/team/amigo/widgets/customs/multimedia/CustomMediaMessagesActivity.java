@@ -14,12 +14,12 @@ import com.stfalcon.chatkit.messages.MessagesListAdapter;
 import amigo.atom.team.amigo.R;
 import amigo.atom.team.amigo.common.fixtures.MessagesFixtures;
 import amigo.atom.team.amigo.common.model.Message;
-import amigo.atom.team.amigo.common.demo.DemoMessagesActivity;
+import amigo.atom.team.amigo.common.demo.MessagesActivity;
 import amigo.atom.team.amigo.widgets.customs.multimedia.holders.IncomingVoiceMessageViewHolder;
 import amigo.atom.team.amigo.widgets.customs.multimedia.holders.OutcomingVoiceMessageViewHolder;
 
 
-public class CustomMediaMessagesActivity extends DemoMessagesActivity
+public class CustomMediaMessagesActivity extends MessagesActivity
         implements MessageInput.InputListener,
         MessageInput.AttachmentsListener,
         MessageHolders.ContentChecker<Message>,

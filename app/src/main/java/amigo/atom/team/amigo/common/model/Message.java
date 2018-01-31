@@ -1,6 +1,7 @@
 package amigo.atom.team.amigo.common.model;
 
 import com.stfalcon.chatkit.commons.models.IMessage;
+import com.stfalcon.chatkit.commons.models.IUser;
 import com.stfalcon.chatkit.commons.models.MessageContentType;
 
 import java.util.Date;
@@ -15,9 +16,11 @@ public class Message implements IMessage,
     private String id;
     private String text;
     private Date createdAt;
-    private User user;
+    User user;
     private Image image;
     private Voice voice;
+
+    public Message(){}
 
     public Message(String id, User user, String text) {
         this(id, user, text, new Date());
@@ -46,9 +49,7 @@ public class Message implements IMessage,
     }
 
     @Override
-    public User getUser() {
-        return this.user;
-    }
+    public User getUser() { return user;}
 
     @Override
     public String getImageUrl() {
