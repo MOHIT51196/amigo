@@ -5,7 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="amigo.atom.team.amigo.views.fragments.ChatFragment">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,21 +12,28 @@
         android:gravity="center_horizontal"
         android:layout_gravity="center">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="In stress ? Lets chat"
-            android:textStyle="bold"
-            android:textSize="22dp" />
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="280dp"
+            android:layout_height="350dp"
+            android:id="@+id/imageBot"
+            android:src="@drawable/bot"/>
 
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+        <Button
             android:id="@+id/btnGoChat"
-            app:srcCompat="@drawable/quantum_ic_play_arrow_white_24"
-            android:elevation="4dp"
-            android:layout_margin="18dp"/>
-
+            android:text="Lets chat !"
+            android:textColor="#ffffff"
+            android:textAllCaps="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style_border_button"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
     </LinearLayout>
 
 </FrameLayout>

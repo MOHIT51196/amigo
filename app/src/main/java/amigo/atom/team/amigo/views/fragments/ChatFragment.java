@@ -1,20 +1,18 @@
 package amigo.atom.team.amigo.views.fragments;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import amigo.atom.team.amigo.R;
-import amigo.atom.team.amigo.widgets.customs.regular.CustomDialogsActivity;
 import amigo.atom.team.amigo.widgets.customs.regular.CustomMessagesActivity;
 
 
@@ -26,7 +24,14 @@ public class ChatFragment extends Fragment {
                              Bundle savedInstanceState) {
         this.view = inflater.inflate(R.layout.fragment_chat, container, false);
 
-        final FloatingActionButton btnGoChat = (FloatingActionButton) view.findViewById(R.id.btnGoChat);
+        final Button btnGoChat = (Button) view.findViewById(R.id.btnGoChat);
+//        final ImageView imageBot = (ImageView) view.findViewById(R.id.imageBot);
+
+//        Glide.with(getActivity())
+//                .load("https://media.giphy.com/media/10zdNpfpsoV4sM/giphy.gif")
+//                .asGif()
+//                .diskCacheStrategy(DiskCacheStrategy.NONE)
+//                .into(imageBot);
 
 
         btnGoChat.setOnClickListener(new View.OnClickListener() {

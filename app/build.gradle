@@ -43,6 +43,7 @@ dependencies {
     compile 'com.github.siyamed:android-shape-imageview:0.9.3'
     compile 'me.relex:circleindicator:1.2.2@aar'
     compile 'com.github.stfalcon:chatkit:0.2.2'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'
     testCompile 'junit:junit:4.12'
 }
 

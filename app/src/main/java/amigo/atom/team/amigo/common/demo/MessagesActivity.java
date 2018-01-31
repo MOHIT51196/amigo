@@ -50,7 +50,6 @@ public abstract class MessagesActivity extends AppCompatActivity
             @Override
             public void loadImage(ImageView imageView, String url) {
                 Glide.with(MessagesActivity.this).load("https://vignette.wikia.nocookie.net/creation/images/1/17/Bot.png/revision/latest?cb=20160707002420")
-                        .fitCenter()
                         .into(imageView);
             }
         };
