@@ -9,16 +9,16 @@ import java.io.Serializable;
 /*
  * Created by troy379 on 04.04.17.
  */
-public class User implements IUser, Serializable, Cloneable {
+public class Person implements IUser, Serializable, Cloneable {
 
     private String id;
     private String name;
     private String avatar;
     private boolean online;
 
-    public User(){}
+    public Person(){}
 
-    public User(String id, String name, String avatar, boolean online) {
+    public Person(String id, String name, String avatar, boolean online) {
         this.id = id;
         this.name = name;
         this.avatar = avatar;

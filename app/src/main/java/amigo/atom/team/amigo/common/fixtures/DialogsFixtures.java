@@ -6,7 +6,7 @@ import java.util.Date;
 
 import amigo.atom.team.amigo.common.model.Dialog;
 import amigo.atom.team.amigo.common.model.Message;
-import amigo.atom.team.amigo.common.model.User;
+import amigo.atom.team.amigo.common.model.Person;
 
 /*
  * Created by Anton Bevza on 07.09.16.
@@ -31,7 +31,7 @@ public final class DialogsFixtures extends FixturesData {
     }
 
     private static Dialog getDialog(int i, Date lastMessageCreatedAt) {
-        ArrayList<User> users = getUsers();
+        ArrayList<Person> users = getUsers();
         return new Dialog(
                 getRandomId(),
                 users.size() > 1 ? groupChatTitles.get(users.size() - 2) : users.get(0).getName(),
@@ -41,8 +41,8 @@ public final class DialogsFixtures extends FixturesData {
                 i < 3 ? 3 - i : 0);
     }
 
-    private static ArrayList<User> getUsers() {
-        ArrayList<User> users = new ArrayList<>();
+    private static ArrayList<Person> getUsers() {
+        ArrayList<Person> users = new ArrayList<>();
         int usersCount = 1 + rnd.nextInt(4);
 
         for (int i = 0; i < usersCount; i++) {
@@ -52,8 +52,8 @@ public final class DialogsFixtures extends FixturesData {
         return users;
     }
 
-    private static User getUser() {
-        return new User(
+    private static Person getUser() {
+        return new Person(
                 getRandomId(),
                 getRandomName(),
                 getRandomAvatar(),

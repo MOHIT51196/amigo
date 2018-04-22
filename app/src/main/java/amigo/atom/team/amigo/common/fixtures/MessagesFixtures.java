@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import amigo.atom.team.amigo.common.model.Message;
-import amigo.atom.team.amigo.common.model.User;
+import amigo.atom.team.amigo.common.model.Person;
 
 /*
  * Created by troy379 on 12.12.16.
@@ -35,6 +35,10 @@ public final class MessagesFixtures extends FixturesData {
         return new Message(getRandomId(), getUser(), text);
     }
 
+    public static Message getFakeTextMessage(String text) {
+        return new Message(getRandomId(), getBot(), text);
+    }
+
     public static ArrayList<Message> getMessages(Date startDate) {
         ArrayList<Message> messages = new ArrayList<>();
         for (int i = 0; i < 10/*days count*/; i++) {
@@ -59,11 +63,19 @@ public final class MessagesFixtures extends FixturesData {
         return messages;
     }
 
-    private static User getUser() {
-        return new User(
+    private static Person getUser() {
+        return new Person(
                  "0",
                  names.get(0),
                  avatars.get(0),
+                true);
+    }
+
+    private static Person getBot() {
+        return new Person(
+                "1",
+                names.get(1),
+                avatars.get(1),
                 true);
     }
 }

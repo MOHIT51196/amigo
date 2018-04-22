@@ -11,16 +11,17 @@ import com.google.android.gms.maps.model.Marker;
 import java.util.ArrayList;
 
 import amigo.atom.team.amigo.R;
+import amigo.atom.team.amigo.modal.User;
 
 public class CustomInfoWindowAdapter implements GoogleMap.InfoWindowAdapter {
 
     private Context context;
    private final View view;
-   private ArrayList<LatLng> list;
+   private ArrayList<User> list;
    boolean notFirstTime;
  
  
-   public CustomInfoWindowAdapter(Context context, ArrayList<LatLng> list) {
+   public CustomInfoWindowAdapter(Context context, ArrayList list) {
        this.context = context;
        this.list = list;
        this.view = ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.layout_map_info_window, null);

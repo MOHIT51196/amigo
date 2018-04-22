@@ -30,7 +30,7 @@ public abstract class DialogsActivity extends AppCompatActivity
         imageLoader = new ImageLoader() {
             @Override
             public void loadImage(ImageView imageView, String url) {
-                Picasso.with(DialogsActivity.this).load(url).into(imageView);
+//                Picasso.with(DialogsActivity.this).load(url).into(imageView);
             }
         };
     }
